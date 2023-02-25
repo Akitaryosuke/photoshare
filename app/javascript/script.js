@@ -1,6 +1,3 @@
-let title = "javascriptが使えました";
-alert(title); 
-
 const opt = {
   loop: true, 
   pagination: { 

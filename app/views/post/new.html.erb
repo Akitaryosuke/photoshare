@@ -1,6 +1,8 @@
-<%= form_with model: @post, url: root_path, method: :post do |f| %>
+<%= form_with model: @post, url: post_index_path, method: :post do |f| %>
 <%# 画像を投稿できるようにする　%>
-  <%= f.label :posted_text, "タイトル" %>
-  <%= f.text_area :posted_text, class:"form-control" %>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :images, multiple: true %>
+  </div>
   <%= f.submit '投稿', class:"btn btn-info" %>
 <% end %>

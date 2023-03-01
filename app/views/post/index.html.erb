@@ -1,6 +1,11 @@
 <h1>一覧</h1>
 <%= link_to "投稿", new_post_path %>
 
-<% @posts.each do |post| %>
-  <%= image_tag post.image.variant(resize: '500x500', gravity: "center", crop: "65x65+0+0").processed %>
-<% end %>
+
+  <% @posts.each do |post| %>
+    
+      <%= image_tag post.images[0] %>
+    
+  <% end %>
+
+

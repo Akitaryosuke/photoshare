@@ -3,12 +3,10 @@
   <%= link_to "投稿", new_post_path %>
 </div>
 
-
 <% @posts.each do |post| %>
-  <div>
-    <div>
-      <%= post.user.name %>
-    </div>
-    <%= image_tag post.image.variant(resize: '500x500', gravity: "center", crop: "500x500+0+0").processed %>
-  </div>
+  <% if post.image.attached? %>
+    <% post.image.each do |image| %>
+      <%= image_tag image.variant(resize: '500x500') %>
+    <% end %>
+  <% end %>
 <% end %>

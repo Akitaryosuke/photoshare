@@ -1,8 +1,8 @@
 <%= form_with model: @post, url: post_index_path, method: :post do |f| %>
 <%# 画像を投稿できるようにする　%>
- <div class="mb-3">
-    <%= f.label :image, "画像", class: "font-semibold block p-1" %>
-    <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png", data: { images_target: "select", action: "change->images#selectImages" } %>
+ <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image, multiple: true %>
   </div>
   <%= f.submit '投稿', class:"btn btn-info" %>
 <% end %>

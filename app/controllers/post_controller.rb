@@ -9,7 +9,7 @@ class PostController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
       redirect_to post_index_path, notice: "投稿しました"
@@ -22,7 +22,7 @@ class PostController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:image)
+    params.require(:post).permit(images: [])
   end
 
 end

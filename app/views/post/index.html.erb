@@ -4,9 +4,12 @@
 </div>
 
 <% @posts.each do |post| %>
-  <% if post.image.attached? %>
+  <div>
+    <div>
+      <%= post.user.name %>
+    </div>
     <% post.image.each do |image| %>
       <%= image_tag image.variant(resize: '500x500') %>
     <% end %>
-  <% end %>
+  </div>
 <% end %>
